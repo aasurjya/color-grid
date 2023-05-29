@@ -1,0 +1,47 @@
+h2 {
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+body {
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); 
+}
+
+.color-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+
+  }
+
+
+.color-grid td {
+    width: 60px;
+    height: 30px;
+    border: 2px solid white;
+
+}
+
+.available-colors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+.available-color {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #000;
+  }
