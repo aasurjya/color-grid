@@ -23,6 +23,18 @@ function getRandomColor() {
     return color;
 }
 
+//Function to play a sound while click
+
+function playClickSound(){
+    const clickSound = document.getElementById('fillColorSound');
+    clickSound.currentTime = 0; // Rewind the audio to the beginning
+    clickSound.play();
+}
+function playSelectedSound(){
+    const clickSound = document.getElementById('clickSound');
+    clickSound.currentTime = 0; // Rewind the audio to the beginning
+    clickSound.play();
+}
 // Generate HTML for Available Colors
 const colorPalette = document.getElementById('color-palette');
     for (let i = 0; i < availableColors.length; i++) {
@@ -32,6 +44,7 @@ const colorPalette = document.getElementById('color-palette');
         colorDiv.style.backgroundColor = color;
         colorDiv.onclick = function () {
             selectedColor = color;
+            playSelectedSound();
         };
         colorPalette.appendChild(colorDiv);
     }
@@ -69,9 +82,11 @@ function fillColor(row, col) {
     const selectedColor = getSelectedColor();
     if (targetColor === selectedColor) {
         return; // If the selected color is the same as the target color, no need to fill
+        
     }
     floodFill(row, col, targetColor, selectedColor);
     colorGrid.innerHTML = generateColorGridHTML(colorGridData);
+     playClickSound();
 }
 
 function floodFill(row, col, targetColor, replacementColor) {
